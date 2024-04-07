@@ -5,8 +5,8 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses;
-	private int tutionBalnace = 0;
+	private String courses = null;
+	private int tutionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
 
@@ -24,9 +24,8 @@ public class Student {
 		
 		setStudentID();
 		
-		System.out.println(firstName + " " + lastName +  " " + gradeYear + "" + studentID);
-		
-		
+		System.out.println(firstName + " " + lastName +  " " + gradeYear + " " + studentID);
+				
 	}
 	
 	// Generate an ID
@@ -44,6 +43,12 @@ public class Student {
 		System.out.println("Enter course to enroll (Q to quit): ");
 		Scanner in = new Scanner(System.in);
 		String course = in.nextLine();
+		if(course != "Q") {
+			courses = courses + "\n" + course;
+			tutionBalance = tutionBalance + costOfCourse;
+		}
+		System.out.println("ENROLLED IN: " + courses);
+		System.out.println("TUTION BALANCE: " + tutionBalance);
 		
 	}
 	
