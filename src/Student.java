@@ -40,13 +40,19 @@ public class Student {
 	public void enroll() {
 		// Get inside a loop, user hits 0
 		
-		System.out.println("Enter course to enroll (Q to quit): ");
-		Scanner in = new Scanner(System.in);
-		String course = in.nextLine();
-		if(course != "Q") {
-			courses = courses + "\n" + course;
-			tutionBalance = tutionBalance + costOfCourse;
-		}
+		do {	
+			System.out.print("Enter course to enroll (Q to quit): ");
+			Scanner in = new Scanner(System.in);
+			String course = in.nextLine();
+			if(!course.equals("Q") ) {
+				courses = courses + "\n" + course;
+				tutionBalance = tutionBalance + costOfCourse;
+			}
+			else {
+				break;
+			}
+		}while(true);
+		
 		System.out.println("ENROLLED IN: " + courses);
 		System.out.println("TUTION BALANCE: " + tutionBalance);
 		
