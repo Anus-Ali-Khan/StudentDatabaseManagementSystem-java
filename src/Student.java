@@ -5,7 +5,7 @@ public class Student {
 	private String lastName;
 	private int gradeYear;
 	private String studentID;
-	private String courses = null;
+	private String courses;
 	private int tutionBalance = 0;
 	private static int costOfCourse = 600;
 	private static int id = 1000;
@@ -59,8 +59,16 @@ public class Student {
 	}
 	
 	// View balance
+	public void viewBalance() {
+		System.out.println("Your balance is: $" + tutionBalance);
+	}
 	
 	// Pay Tuition
+	public void	payTution(int payment) {
+		tutionBalance = tutionBalance - payment;
+		System.out.println("Thank you for your paymnet of $" + payment);
+		viewBalance();
+	}
 	
 	// Show Status
 }
